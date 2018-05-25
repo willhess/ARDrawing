@@ -11,8 +11,9 @@ import ARKit
 
 class ViewController: UIViewController, ARSCNViewDelegate {
     
+
+
     @IBOutlet weak var draw: UIButton!
-    @IBOutlet weak var delete: UIButton!
     @IBOutlet weak var sceneView: ARSCNView!
     let configuration = ARWorldTrackingConfiguration()
     
@@ -50,6 +51,16 @@ class ViewController: UIViewController, ARSCNViewDelegate {
                 self.sceneView.scene.rootNode.addChildNode(pointer)
                 pointer.geometry?.firstMaterial?.diffuse.contents = UIColor.white
             }
+        }
+    }
+    
+    @IBAction func reset(_ sender: Any) {
+        restartSession()
+    }
+    
+    func restartSession() {
+        self.sceneView.scene.rootNode.enumerateChildNodes { (node, _) in
+            node.removeFromParentNode()
         }
     }
 }

@@ -21,40 +21,38 @@
                             <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TcE-Ov-r9p">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </arscnView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x1K-2s-VbX">
-                                <rect key="frame" x="0.0" y="607" width="375" height="60"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="y72-Me-Kz9"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Draw"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NBf-LU-WNH" userLabel="Delete">
-                                <rect key="frame" x="330" y="40" width="25" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="9sr-VA-JWA"/>
-                                </constraints>
-                                <state key="normal" image="trash_ic"/>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hW1-aT-i4e">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="hCK-RZ-WxI"/>
+                                    <barButtonItem systemItem="trash" id="miG-g6-oq6" userLabel="Reset">
+                                        <connections>
+                                            <action selector="reset:" destination="BYZ-38-t0r" id="qK5-m1-PAu"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x1K-2s-VbX">
+                                <rect key="frame" x="172.5" y="630.5" width="30" height="30"/>
+                                <state key="normal" image="pencil"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="NBf-LU-WNH" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="7yg-gA-UcO"/>
-                            <constraint firstItem="x1K-2s-VbX" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="BuW-W5-wa6"/>
-                            <constraint firstItem="x1K-2s-VbX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="KD2-Og-3qo"/>
-                            <constraint firstItem="NBf-LU-WNH" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-20" id="Le4-Un-4JX"/>
+                            <constraint firstItem="hW1-aT-i4e" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="GlX-cD-ra6"/>
                             <constraint firstItem="TcE-Ov-r9p" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="NgV-Ih-iks"/>
                             <constraint firstItem="TcE-Ov-r9p" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="WYF-aA-6b2"/>
+                            <constraint firstItem="x1K-2s-VbX" firstAttribute="centerY" secondItem="hW1-aT-i4e" secondAttribute="centerY" id="aAd-dI-sOe"/>
                             <constraint firstItem="TcE-Ov-r9p" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="g8A-oC-Z4k"/>
-                            <constraint firstItem="x1K-2s-VbX" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="pUC-AB-6mq"/>
                             <constraint firstItem="TcE-Ov-r9p" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="qlM-oh-oRT"/>
+                            <constraint firstItem="x1K-2s-VbX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="qlX-9X-gKy"/>
+                            <constraint firstItem="hW1-aT-i4e" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="vF7-xK-oAJ"/>
+                            <constraint firstItem="hW1-aT-i4e" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="wKA-zr-8gd"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="delete" destination="NBf-LU-WNH" id="Sdo-WW-duv"/>
-                        <outlet property="draw" destination="x1K-2s-VbX" id="b2p-uu-lTo"/>
+                        <outlet property="draw" destination="x1K-2s-VbX" id="UlT-7X-G7e"/>
                         <outlet property="sceneView" destination="TcE-Ov-r9p" id="h9Y-4L-ltt"/>
                     </connections>
                 </viewController>
@@ -64,6 +62,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="trash_ic" width="25" height="25"/>
+        <image name="pencil" width="30" height="30"/>
     </resources>
 </document>

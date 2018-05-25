@@ -54,8 +54,8 @@
 		BEDC8F1420B78F2C00D24389 /* ARDrawing */ = {
 			isa = PBXGroup;
 			children = (
-				BEDC8F1520B78F2C00D24389 /* AppDelegate.swift */,
 				BEDC8F1720B78F2C00D24389 /* ViewController.swift */,
+				BEDC8F1520B78F2C00D24389 /* AppDelegate.swift */,
 				BEDC8F1920B78F2C00D24389 /* Main.storyboard */,
 				BEDC8F1C20B78F2C00D24389 /* Assets.xcassets */,
 				BEDC8F1E20B78F2C00D24389 /* LaunchScreen.storyboard */,
