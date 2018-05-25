@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BECC3A2420B85D2100EE1A2E /* ColorPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECC3A2320B85D2100EE1A2E /* ColorPickerView.swift */; };
 		BEDC8F1620B78F2C00D24389 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDC8F1520B78F2C00D24389 /* AppDelegate.swift */; };
 		BEDC8F1820B78F2C00D24389 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDC8F1720B78F2C00D24389 /* ViewController.swift */; };
 		BEDC8F1B20B78F2C00D24389 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEDC8F1920B78F2C00D24389 /* Main.storyboard */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BECC3A2320B85D2100EE1A2E /* ColorPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPickerView.swift; sourceTree = "<group>"; };
 		BEDC8F1220B78F2C00D24389 /* ARDrawing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARDrawing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEDC8F1520B78F2C00D24389 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BEDC8F1720B78F2C00D24389 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -54,9 +56,10 @@
 		BEDC8F1420B78F2C00D24389 /* ARDrawing */ = {
 			isa = PBXGroup;
 			children = (
+				BECC3A2320B85D2100EE1A2E /* ColorPickerView.swift */,
 				BEDC8F1720B78F2C00D24389 /* ViewController.swift */,
-				BEDC8F1520B78F2C00D24389 /* AppDelegate.swift */,
 				BEDC8F1920B78F2C00D24389 /* Main.storyboard */,
+				BEDC8F1520B78F2C00D24389 /* AppDelegate.swift */,
 				BEDC8F1C20B78F2C00D24389 /* Assets.xcassets */,
 				BEDC8F1E20B78F2C00D24389 /* LaunchScreen.storyboard */,
 				BEDC8F2120B78F2C00D24389 /* Info.plist */,
@@ -137,6 +140,7 @@
 			files = (
 				BEDC8F1820B78F2C00D24389 /* ViewController.swift in Sources */,
 				BEDC8F1620B78F2C00D24389 /* AppDelegate.swift in Sources */,
+				BECC3A2420B85D2100EE1A2E /* ColorPickerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

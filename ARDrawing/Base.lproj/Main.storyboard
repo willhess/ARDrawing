@@ -24,8 +24,13 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hW1-aT-i4e">
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <items>
+                                    <barButtonItem image="colors" springLoaded="YES" id="pRs-yJ-mVl" userLabel="Colors">
+                                        <connections>
+                                            <action selector="colors:" destination="BYZ-38-t0r" id="h9B-oz-MNy"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="hCK-RZ-WxI"/>
-                                    <barButtonItem systemItem="trash" id="miG-g6-oq6" userLabel="Reset">
+                                    <barButtonItem springLoaded="YES" systemItem="trash" id="miG-g6-oq6" userLabel="Reset">
                                         <connections>
                                             <action selector="reset:" destination="BYZ-38-t0r" id="qK5-m1-PAu"/>
                                         </connections>
@@ -33,16 +38,31 @@
                                 </items>
                             </toolbar>
                             <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x1K-2s-VbX">
-                                <rect key="frame" x="172.5" y="630.5" width="30" height="30"/>
+                                <rect key="frame" x="160" y="623.5" width="55" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="55" id="ufO-Hm-Z1a"/>
+                                </constraints>
                                 <state key="normal" image="pencil"/>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mcB-5o-3hp" customClass="ColorPickerView" customModule="ARDrawing" customModuleProvider="target">
+                                <rect key="frame" x="16" y="558" width="343" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="h6Y-cq-Bfe"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="hW1-aT-i4e" firstAttribute="top" secondItem="mcB-5o-3hp" secondAttribute="bottom" constant="35" id="6mV-Rd-9IR"/>
+                            <constraint firstItem="x1K-2s-VbX" firstAttribute="height" secondItem="hW1-aT-i4e" secondAttribute="height" id="8rN-8I-taC"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mcB-5o-3hp" secondAttribute="trailing" constant="16" id="Ecq-Km-mY3"/>
                             <constraint firstItem="hW1-aT-i4e" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="GlX-cD-ra6"/>
                             <constraint firstItem="TcE-Ov-r9p" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="NgV-Ih-iks"/>
+                            <constraint firstItem="mcB-5o-3hp" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="QDc-pF-drP"/>
                             <constraint firstItem="TcE-Ov-r9p" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="WYF-aA-6b2"/>
                             <constraint firstItem="x1K-2s-VbX" firstAttribute="centerY" secondItem="hW1-aT-i4e" secondAttribute="centerY" id="aAd-dI-sOe"/>
+                            <constraint firstItem="mcB-5o-3hp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="crL-g3-IBD"/>
                             <constraint firstItem="TcE-Ov-r9p" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="g8A-oC-Z4k"/>
                             <constraint firstItem="TcE-Ov-r9p" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="qlM-oh-oRT"/>
                             <constraint firstItem="x1K-2s-VbX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="qlX-9X-gKy"/>
@@ -52,6 +72,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="colorPickerView" destination="mcB-5o-3hp" id="x2G-RC-sml"/>
                         <outlet property="draw" destination="x1K-2s-VbX" id="UlT-7X-G7e"/>
                         <outlet property="sceneView" destination="TcE-Ov-r9p" id="h9Y-4L-ltt"/>
                     </connections>
@@ -62,6 +83,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="colors" width="30" height="30"/>
         <image name="pencil" width="30" height="30"/>
     </resources>
 </document>

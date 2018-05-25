@@ -11,17 +11,21 @@ import ARKit
 
 class ViewController: UIViewController, ARSCNViewDelegate {
     
-
-
     @IBOutlet weak var draw: UIButton!
+    @IBOutlet weak var colorPickerView: ColorPickerView!
     @IBOutlet weak var sceneView: ARSCNView!
     let configuration = ARWorldTrackingConfiguration()
+    var pickerColor = UIColor.white
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.sceneView.debugOptions = [ARSCNDebugOptions.showWorldOrigin, ARSCNDebugOptions.showFeaturePoints]
         self.sceneView.session.run(configuration)
         self.sceneView.delegate = self
+        self.colorPickerView.isHidden = true
+        self.colorPickerView.didChangeColor = { color in
+            self.pickerColor = color!
+        }
     }
     
     func renderer(_ renderer: SCNSceneRenderer, willRenderScene scene: SCNScene, atTime time: TimeInterval) {
@@ -37,10 +41,10 @@ class ViewController: UIViewController, ARSCNViewDelegate {
                 let sphereNode = SCNNode(geometry: SCNSphere(radius: 0.02))
                 sphereNode.position = currentPositionOfCamera
                 self.sceneView.scene.rootNode.addChildNode(sphereNode)
-                sphereNode.geometry?.firstMaterial?.diffuse.contents = UIColor.white
+                sphereNode.geometry?.firstMaterial?.diffuse.contents = self.pickerColor
             }
             else {
-                let pointer = SCNNode(geometry: SCNSphere(radius: 0.01))
+                let pointer = SCNNode(geometry: SCNSphere(radius: 0.008))
                 pointer.name = "pointer"
                 pointer.position = currentPositionOfCamera
                 self.sceneView.scene.rootNode.enumerateChildNodes({ (node, _) in
@@ -49,8 +53,20 @@ class ViewController: UIViewController, ARSCNViewDelegate {
                     }
                 })
                 self.sceneView.scene.rootNode.addChildNode(pointer)
-                pointer.geometry?.firstMaterial?.diffuse.contents = UIColor.white
+                pointer.geometry?.firstMaterial?.diffuse.contents = self.pickerColor
             }
+        }
+    }
+    
+    @IBAction func colors(_ sender: Any) {
+        displayColorPicker()
+    }
+    
+    func displayColorPicker() {
+        if colorPickerView.isHidden == false {
+            self.colorPickerView.isHidden = true
+        } else {
+            self.colorPickerView.isHidden = false
         }
     }
     
